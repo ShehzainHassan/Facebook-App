@@ -3,8 +3,12 @@ import "./Login.css";
 function Login() {
   return (
     <div className="login-container">
-      <img className="facebook-logo" src="/fb-logo.png" alt="Facebook Logo" />
-
+      <div className="facebook">
+        <div className="facebook-logo">facebook</div>
+        <div className="description">
+          Facebook helps you connect and share with the people in your life
+        </div>
+      </div>
       <div className="login-form">
         <input
           className="email"
