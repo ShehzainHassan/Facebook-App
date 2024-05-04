@@ -4,17 +4,13 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalCloseButton,
   ModalBody,
-  ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
 import SignUp from "./SignUp";
-import { useState } from "react";
 function Login() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
   return (
     <div className="login-container">
       <div className="facebook">
