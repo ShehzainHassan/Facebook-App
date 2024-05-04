@@ -1,6 +1,20 @@
 import "./Login.css";
-
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from "@chakra-ui/react";
+import SignUp from "./SignUp";
+import { useState } from "react";
 function Login() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
   return (
     <div className="login-container">
       <div className="facebook">
@@ -16,12 +30,32 @@ function Login() {
           placeholder="Email address or phone number"
         />
         <input className="password" type="password" placeholder="Password" />
-        <button className="login-button">Log In</button>
+        <Button
+          colorScheme="blue.400"
+          className="login-button"
+          _hover={{ bg: "blue.600" }}>
+          Log In
+        </Button>
         <a className="forgot-password" href="#">
           Forgotten password?
         </a>
-        <button className="sign-up-button">Create a new account</button>
+        <Button
+          colorScheme="green.200"
+          onClick={onOpen}
+          className="sign-up-button"
+          _hover={{ bg: "green.400" }}>
+          Create a new account
+        </Button>
       </div>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent maxH="600px" maxW="500px">
+          <ModalCloseButton />
+          <ModalBody>
+            <SignUp />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }
