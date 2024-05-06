@@ -16,7 +16,7 @@ const DisplayPostCard = ({
   Shares,
   postId,
 }) => {
-  const [likes, setLikes] = useState(Likes);
+  const [likes, setLikes] = useState();
   const [isLiked, setIsLiked] = useState(false);
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(false);

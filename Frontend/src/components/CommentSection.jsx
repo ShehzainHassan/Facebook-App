@@ -4,6 +4,7 @@ import { BiX } from "react-icons/bi";
 
 const CommentSection = ({ onClose, comments }) => {
   const [comment, setComment] = useState("");
+ 
 
   const handleChange = (e) => {
     setComment(e.target.value);

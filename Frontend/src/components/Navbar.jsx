@@ -1,5 +1,6 @@
 import React from "react";
 import facebook from "../assets/124010.png";
+import { Link } from "react-router-dom";
 import {
   FaHome,
   FaRegFlag,
@@ -67,7 +68,9 @@ const Navbar = () => {
 
       {/* right */}
       <div className="flex items-center sm:space-x-2 justify-end">
+      <Link to={"/msg"}>
         <NavbarIcon Icon={HiOutlineChatAlt2} />
+        </Link>
         <NavbarIcon Icon={HiOutlineBell} />
         <NavbarIcon Icon={HiOutlineChevronDown} />
 
